@@ -1,7 +1,7 @@
 // set global variables
 int posX, posY; 
 int health;
-color brown, blue;
+color brown, blue, orange, black, gray;
 
 void setup(){
   size(500,500); // set size window
@@ -10,6 +10,9 @@ void setup(){
   //set color 
   brown = color(210,180,140);
   blue = color(0,0,128);
+  orange = color(255,178,102);
+  gray = color(244);
+  black = color(0);
   
   posX = width/10; 
   posY = height/2;
@@ -18,6 +21,17 @@ void setup(){
 
 void draw(){
   background(255);
+  
+  // display Health
+  fill(gray);
+  rect(20,20,100,25);
+  fill(orange);
+  rect(82,22,30,20);
+  fill(black);
+  textSize(16);
+  text("Health   " + health,25,37);
+  
+  // draw bear and cat
   bear();
   cat();
 }
@@ -37,8 +51,9 @@ void cat(){
   }
   
   // check Cat touching Bear
-  if (100 <= posX && posX <= 200 && 100 <= posY && posY <= 150){
+  if (100 <= posX && posX <= 200+100 && 100 <= posY && posY <= 150+100){
     health -= 1;
+    delay(100);
   }
 }
 
