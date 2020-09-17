@@ -18,15 +18,28 @@ void setup(){
 
 void draw(){
   background(255);
-  noStroke(); // no border
-  
-  // draw rectangle (instead of Bear)
+  bear();
+  cat();
+}
+
+void bear(){
   fill(brown);
+  noStroke(); // no border
   rect(100,100,200,150);
+}
+
+void cat(){
+  // when Cat still alive
+  if (health > 0){
+    // draw circle (instead of Cat)
+    fill(blue);
+    circle(posX, posY, 50);
+  }
   
-  // draw circle (instead of Cat)
-  fill(blue);
-  circle(posX, posY, 50);
+  // check Cat touching Bear
+  if (100 <= posX && posX <= 200 && 100 <= posY && posY <= 150){
+    health -= 1;
+  }
 }
 
 void keyPressed(){
