@@ -76,4 +76,20 @@ void keyPressed(){
       posX += 10;
     }
   }
+  else if (key == 'w'){
+    // pressed key 'w' for move up
+    posY -= 10;
+  }
+  else if (key == 's'){
+    // pressed key 's' for move down
+    posY += 10;
+  }
+  else if (key == 'a'){
+    // pressed key 'a' for move left
+    posX -= 10;
+  }
+  else if (key == 'd'){
+    // pressed key 'd' for move right
+    posX += 10;
+  }
 }
